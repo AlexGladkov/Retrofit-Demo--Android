@@ -5,13 +5,12 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
+import ru.agladkov.retrofitdemo.network.DotaApi
+import ru.agladkov.retrofitdemo.network.DotaRetrofitClient
+import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel(val retrofit: Retrofit): ViewModel() {
+class LoginViewModel @Inject constructor(private val dotaApi: DotaApi): ViewModel() {
 
-    fun fetchHeroes() {
-        viewModelScope.launch {
 
-        }
-    }
 }
