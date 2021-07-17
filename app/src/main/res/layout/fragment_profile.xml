@@ -29,11 +29,11 @@
         android:textColor="@color/white" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sendFileButtonView"
+        android:id="@+id/fileRequestButtonView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:background="@color/purple_500"
+        android:layout_margin="16dp"
         android:text="@string/action_send_file"
         android:textColor="@color/white" />
 

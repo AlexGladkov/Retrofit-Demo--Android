@@ -23,7 +23,7 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
 
         view.findViewById<AppCompatButton>(R.id.loginView)
             .setOnClickListener {
-                VK.login(requireActivity(), arrayListOf(VKScope.WALL, VKScope.PHOTOS))
+                (activity as? BaseNavigation)?.openScreen(ProfileFragment())
             }
     }
 }

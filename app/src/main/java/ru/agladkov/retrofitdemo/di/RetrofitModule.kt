@@ -44,16 +44,16 @@ class RetrofitModule {
         sharedPreferences: SharedPreferences
     ): OkHttpClient =
         OkHttpClient.Builder()
-            .addInterceptor { chain ->
-                val request = chain.request().newBuilder()
-                    .addHeader(
-                        "Authorization",
-                        "Bearer ${sharedPreferences.getString("API_KEY", "").orEmpty()}"
-                    )
-                    .build()
-
-                return@addInterceptor chain.proceed(request)
-            }
+//            .addInterceptor { chain ->
+//                val request = chain.request().newBuilder()
+//                    .addHeader(
+//                        "Authorization",
+//                        "Bearer ${sharedPreferences.getString("API_KEY", "").orEmpty()}"
+//                    )
+//                    .build()
+//
+//                return@addInterceptor chain.proceed(request)
+//            }
             .addInterceptor(httpLoggingInterceptor)
             .build()
 
@@ -82,7 +82,7 @@ class RetrofitModule {
     @QuestGoClient
     fun questGoRetrofit(okHttpClient: OkHttpClient): Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://fierce-ravine-19828.herokuapp.com")
+            .baseUrl("")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
